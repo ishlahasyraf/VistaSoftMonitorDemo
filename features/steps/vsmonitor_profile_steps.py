@@ -8,7 +8,7 @@ from pages import login_page,my_user_account_page,sidebar
 from dotenv import load_dotenv
 import os
 
-#load environment variables from env file 
+#load environment variables from env file "P
 load_dotenv() 
 email = os.getenv("EMAIL")
 password = os.getenv("PASSWORD")
