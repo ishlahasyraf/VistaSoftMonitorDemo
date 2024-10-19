@@ -35,11 +35,11 @@ def settingsbutton(context):
     return settings_button
 
 def userbutton(context):
-    user_button = context.driver1.find_element(By.XPATH,"//div[@aria-label='nav-user-button']")
+    user_button = waituntil(context,(By.XPATH,"//div[@id='nav-desktop']//div[@aria-label='nav-user-button']"))
     return user_button
 
 def myuseraccountbutton(context):
-    myuseraccount_button = context.driver1.find_element(By.XPATH,"//span[@title='My user account']")
+    myuseraccount_button = waituntil(context,(By.XPATH,"//div[@id='user-profile']"))
     return myuseraccount_button
 
 def languagebutton(context):
@@ -53,3 +53,7 @@ def helpbutton(context):
 def legalnoticesbutton(context):
     legalnotices_button = context.driver1.find_element(By.XPATH,"//span[@title='Legal notices']")
     return legalnotices_button
+
+def username(context):
+    username_ = context.driver1.find_element(By.XPATH,"//div[@aria-label='nav-user-button']//p[1]")
+    return username_
