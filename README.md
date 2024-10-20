@@ -10,6 +10,7 @@
 >- Allure
 >- Visual Studio Code (or PyCharm)
 >- pip
+>- any Chromium based browser
 
 1. Clone the repository by running the following script in a terminal
     : `git clone https://github.com/ishlahasyraf/VistaSoftMonitorDemo.git "your directory"
