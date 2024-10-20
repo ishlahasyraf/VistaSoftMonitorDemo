@@ -1,5 +1,6 @@
 Feature: VistaSoft Monitor Login Page
 
+    @skip_before
     Scenario: Successful Login
         Given I launched chrome browser
         When open VistaSoft Monitor webpage
