@@ -18,7 +18,8 @@
 2. drop the .env file into the directory
 3. open code editor of choice and open the folder
 4. create a virtual environment by running the following script in a terminal : `python -m venv "your virtual env name"`
-5. run the following script to install the required libraries : `pip install -r requirements.txt`
+5. Activate the virtual environment by running the following script in a terminal (while in the directory) : `"your virtual env"/Scripts/Activate`
+6. run the following script to install the required libraries : `pip install -r requirements.txt`
 
 # Usage
 - to perform tests, simply run the following script in a terminal(while in the directory) : `behave`
