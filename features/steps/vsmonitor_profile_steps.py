@@ -1,6 +1,5 @@
 from behave import *
 from selenium import webdriver
-from vsmonitor_login_steps import login
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC

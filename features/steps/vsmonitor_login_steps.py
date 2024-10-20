@@ -10,6 +10,8 @@ from pages import login_page
 from pages import sidebar
 
 
+
+
 #load environment variables from env file 
 load_dotenv() 
 email = os.getenv("EMAIL")
@@ -59,11 +61,3 @@ def verifyURL_login(context):
     assert current_url == expected_url,"URL is not matching. User not on the correct page after login"
     print("assertion 1 : User is able to login successfully!")
     
-@given('I successfully logged in VistaSoft Monitor')
-def login(context):
-    launchBrowser(context)
-    clickLoginWelcome(context)
-    enterEmail(context)
-    enterPassword(context)
-    clickLoginAuth(context)
-    verifyURL_login(context)
