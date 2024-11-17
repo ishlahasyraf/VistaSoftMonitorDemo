@@ -24,15 +24,3 @@ def before_scenario(context, scenario):
     #open browser and define the driver
     context.driver1 = webdriver.Chrome()
     context.driver1.maximize_window()
-    # perform user login
-    login_page.getloginpage(context)
-    login_page.loginbutton_welcome(context).click()
-    email_field = login_page.emailfield(context)
-    email_field.click()
-    email_field.send_keys(email)
-    password_field = login_page.passwordfield(context)
-    password_field.click()
-    password_field.send_keys(password)
-    login_page.loginbutton_auth(context).click()
-    WebDriverWait(context.driver1, 20).until(EC.visibility_of_element_located((By.XPATH,"//h2[contains(text(),'Dashboard')]")))
-
