@@ -8,18 +8,18 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def waituntil(context,locator):
     wait = WebDriverWait(context.driver1, 20)
-    return wait.until(EC.visibility_of_element_located(locator))
+    return wait.until(EC.element_to_be_clickable(locator))
 
 def dashboardbutton(context):
     dashboard_button = waituntil(context,(By.XPATH,"//a[@href='/dashboard']"))
     return dashboard_button
 
 def inboxbutton(context):
-    inbox_button = context.driver1.find_element(By.XPATH,"//a[@href='/inbox]")
+    inbox_button = context.driver1.find_element(By.XPATH,"//a[@href='/inbox']")
     return inbox_button
 
 def productsearchbutton(context):
-    productsearch_button = context.driver1.find_element(By.XPATH,"//a[@href='/search/]")
+    productsearch_button = waituntil(context,(By.XPATH,"//div[@id='nav-desktop']//span//a[@href='/search/']"))
     return productsearch_button
 
 def saveddocumentsbutton(context):
