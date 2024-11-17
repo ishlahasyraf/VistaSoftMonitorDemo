@@ -55,9 +55,16 @@ def clickLoginAuth(context):
 
 @then('I am able to login successfully')
 def verifyURL_login(context):
-    WebDriverWait(context.driver1, 20).until(EC.visibility_of_element_located((By.XPATH,"//h2[contains(text(),'Dashboard')]")))
+    WebDriverWait(context.driver1,20).until(EC.visibility_of_element_located((By.XPATH,"//h2[contains(text(),'Dashboard')]")))
     current_url = context.driver1.current_url
     expected_url = 'https://vsmonitor.com/dashboard'
     assert current_url == expected_url,"URL is not matching. User not on the correct page after login"
     print("assertion 1 : User is able to login successfully!")
-    
+
+@given('I have logged in to VistaSoft Monitor webpage')
+def login(context):
+    clickLoginWelcome(context)
+    enterEmail(context)
+    enterPassword(context)
+    clickLoginAuth(context)
+    verifyURL_login(context)
