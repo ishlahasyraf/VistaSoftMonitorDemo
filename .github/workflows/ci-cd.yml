@@ -6,22 +6,23 @@ on:
       - master  # Trigger on pushes to the master branch
   pull_request:
     branches:
-      - master  # Trigger on PRs targeting the master branch
+      - master  # Trigger on pull requests to the master branch
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    # Step 1: Checkout code
+    # Step 1 : Checkout code. give the runner access to the codes in this repo
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    # Step 2: Set up Python
+    # Step 2 : Set up Python
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: "3.12.4"  # Specify your Python version
+        python-version: "3.12.4"  
+        
     # Step 3 : Set up virtual env
     - name: Set up virtual environment
       run: python -m venv venv
@@ -29,19 +30,18 @@ jobs:
     - name: Activate virtual environment
       run: venv/Scripts/activate
 
-    # Step 4: Install dependencies
+    # Step 4 : Install dependencies from requirement.txt file
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Install from requirements file
-
-     # Step 5: Create .env file
+        pip install -r requirements.txt 
+     # Step 5 : Create .env file, and insert repository secret keys into it
     - name: Create .env file
       run: |
         echo "EMAIL=${{ secrets.EMAIL }}" >> .env
         echo "PASSWORD=${{ secrets.SECRET_PASSWORD }}" >> .env
 
 
-    # Run tests
+    # Step 6 : Run tests
     - name: Run tests
       run: behave
 
