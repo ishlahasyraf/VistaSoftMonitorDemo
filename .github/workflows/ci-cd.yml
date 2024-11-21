@@ -27,7 +27,7 @@ jobs:
       run: python -m venv venv
       
     - name: Activate virtual environment
-      run: venv/bin/activate
+      run: venv/Scripts/activate
 
     # Step 3: Install dependencies
     - name: Install dependencies
