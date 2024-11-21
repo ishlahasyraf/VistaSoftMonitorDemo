@@ -25,7 +25,7 @@ def my_user_account_click(context):
 
 @then('My User Account page appears')
 def verify_user_account_page_url(context):
-    WebDriverWait(context.driver1, 20).until(EC.visibility_of_element_located((By.XPATH,"//h2//span[contains(text(),'My user account')]")))
+    my_user_account_page.waituntil(context,(By.XPATH,"//h2//span[contains(text(),'My user account')]"))
     currentURL = context.driver1.current_url
     expectedURL = "https://vsmonitor.com/user/profile"
     assert currentURL == expectedURL , "URL is not matching. User not on the correct page after clicking on My User Account"
