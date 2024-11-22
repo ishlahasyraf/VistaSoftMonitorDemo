@@ -94,7 +94,7 @@ def click_on_product(context):
     
 
 @then('I am able to see the correct product details page')
-def verify_product_details_page_header(context):
+def verify_product_details_page(context):
     keyword = product_search_page.getkeyword(context)
     detail_page_name = product_search_page.product_detail_page_name(context)
     detail_page_SN = product_search_page.product_detail_page_SN(context)

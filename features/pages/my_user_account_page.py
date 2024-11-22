@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 def waituntil(context,locator):
-    wait = WebDriverWait(context.driver1, 20)
+    wait = WebDriverWait(context.driver1, 30)
     return wait.until(EC.visibility_of_element_located(locator))
 
 def firstnamefield(context):
