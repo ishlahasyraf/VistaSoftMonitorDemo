@@ -52,3 +52,11 @@ Feature: VistaSoft Monitor Product Search Page
         And I proceed with the search
         Then I am not able to see any search results
 
+    Scenario: Click on Product to view Product Details
+        Given I have logged in to VistaSoft Monitor webpage
+        And I click on Product Search button
+        When I populate the search field with complete product name
+        And I proceed with the search
+        And I click on the product in the search results list
+        Then I am able to see the correct product details page
+
