@@ -24,7 +24,7 @@ def getkeyword(context):
     current_url = context.driver1.current_url
     keyword = current_url.split("q=")[1]
     updatedkeyword = keyword.replace("%20", " ")
-    print(updatedkeyword)
+    print("Keyword is : ",updatedkeyword)
     return updatedkeyword
 
 def clickproduct(context,searchresult):
