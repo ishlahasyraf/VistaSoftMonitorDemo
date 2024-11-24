@@ -9,7 +9,7 @@ from selenium.common.exceptions import TimeoutException
 
 
 def waituntil(context,locator):
-    wait = WebDriverWait(context.driver1, 30)
+    wait = WebDriverWait(context.driver1, 10)
     return wait.until(EC.visibility_of_element_located(locator))
 
 def searchbar(context):
