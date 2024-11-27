@@ -1,6 +1,6 @@
 # VistaSoft Monitor Demo
 
-This is a demo project for VistaSoft Monitor web application. This project is mainly to showcase test automation using Python and Cucumber.
+This is a demo project for VistaSoft Monitor web application. This project is mainly to showcase test automation using Python and Behave.
 
 ## Pre-requisites
 - Chromium Browser
